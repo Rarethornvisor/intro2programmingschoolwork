@@ -1,0 +1,61 @@
+//Bank Account program i2p assignment 5
+
+Start
+ 
+balance = 0
+choice = 0 
+
+ Until choice is <5 and >0 do // Just curious: can I while do choice=default?
+  show_menu()
+  choice = do_prompt(choice)
+ 
+  case based on choice
+   choice = 1
+    display balance
+   choice = 2
+	balance = do_deposit(balance)
+   choice = 3
+	balance = do_withdrawal(balance)
+   choice = 4
+    Display "Thank you"   
+   choice = default
+    Display "Sorry, invalid choice."
+  end case 
+
+ enduntil
+
+End
+
+Void show_menu()
+ Display "1. Show balance"
+ Display "2. Deposit"
+ Display "3. Withdraw"
+ Display "4. Exit"
+ Return
+ 
+Number do_prompt(number num)
+ Prompt user: "Please enter number from menu"
+ Get number input as num
+ Return num
+
+Number do_deposit(number num)
+ prompt user for input "Please enter amount"
+ get input as deposit
+  if deposit <= 0 then
+   display "invalid amount entered."
+  else
+   num = deposit + num
+   Display "Deposit Completed"
+  endif
+ Return num
+
+Number do_withdraw (number num)
+ prompt user for input "Please enter amount"
+ get input as withdrawal
+   if withdrawal > num then
+    display "Insufficient Funds"
+   else
+	num = withdrawal - num
+    Display "Withdrawal Completed."
+   endif
+ Return num

@@ -1,0 +1,6 @@
+Start
+Prompt for input as text from user
+Receive input from user
+Specified area = X
+Output text to X
+End  
